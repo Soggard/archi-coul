@@ -3,15 +3,16 @@
 <head>
 	<title>ARCHI-COUL, le site archi cool pour les archis archi cools</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<p>hello world</p>
 
 	<div class="container-fluid">
 		<div class="row">
+			<p>hello world</p>
 
 			<!-- Colonne gauche -->
-			<div class="col-md-6">
+			<div class="col-md-6" style="height: 500px;" id="imageBefore">
 				<form id="fileform1">
 					<input type='file' id="imgInp" />
 					<img id="baseImage" src="#" alt="your image" />
@@ -19,7 +20,7 @@
 			</div>
 
 			<!-- Colonne droite -->
-			<div class="col-md-6"></div>
+			<div class="col-md-6" style="height: 500px;" id="imageAfter"></div>
 
 		</div>
 	</div>

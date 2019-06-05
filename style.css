@@ -1,0 +1,9 @@
+html, body, .container-fluid, .row {
+	height: 100%;
+}
+
+#imageBefore, #imageAfter {
+	background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
