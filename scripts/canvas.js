@@ -4,8 +4,8 @@ const canvas = document.querySelector('#draw');
   const restore_button = document.querySelector('.restore_button');
   const ctx = canvas.getContext('2d');
   const button = document.getElementById('btn-download');
-
-  //console.dir(canvas)
+  const buttonSend = document.getElementById('btn-send');
+  const imgInp = document.getElementById('baseImage');
 
   // canvas.width = window.innerWidth;
   // canvas.height = window.innerHeight;
@@ -98,3 +98,27 @@ console.log(e.offsetX, e.offsetY);
     console.log(dataURL);
     button.href = dataURL;
   });
+
+  buttonSend.addEventListener('click', (e) => {
+  // console.dir(imgInp.getAttribute('src'));
+
+    let data    = { 'sketch': imgInp.src, 'hint': canvas.toDataURL('image/png'), 'opacity': 1.0 };
+    data        = JSON.stringify(data);
+    $.ajax({
+      url         : 'https://dvic.devinci.fr/dgx/paints_torch/api/v1/colorizer',
+      type        : 'POST',
+      data        : data,
+      contentType : 'application/json; charset=utf-8',
+      dataType    :'json',
+      success     : function(response){
+        if('colored' in response) {
+          let colored = response.colored;
+          console.log(colored)
+          $('#imageAfter').attr('src', colored);
+
+          // Do wathever you want with it
+        }
+      }
+    });
+  });
+

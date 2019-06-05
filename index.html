@@ -12,13 +12,13 @@
 			<div class="col-md-12">
 				<p>hello world</p>
 			</div>
-			
+
 			<!-- Colonne gauche -->
 			<div class="col-md-6" style="height: 400px;background-color: #EEE" id="imageBefore">
 				<form id="fileform1">
 					<input type='file' id="imgInp" name="sketch" />
-					
-					
+
+
 				</form>
 
 				<div style="position: relative;">
@@ -27,7 +27,7 @@
 					</div>
 
 					<canvas id="draw" width="500" height="500"></canvas>
-				</div>	
+				</div>
 
 				<div>
 				    <button class="restore_button">Restore=</button>
@@ -35,12 +35,16 @@
 				    <input type="range" max="100" min="1" class="stroke_width">
 				    <input type="color" class="stroke_color">
 				    <a href="#" class="button" id="btn-download">Download</a>
+				    <button type="button" class="button" id="btn-send">Colorize</button>
+
 					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAgAElEQVR4Xu3dB7Q0W1km4FdAHAVBZ1ggoIg4yig5SJScozJjImPCRVCRS9DBAUFESYoKZlFJIjgoGUmCJEGiAiqiBBFEERUwzEiY9Tn947lN9Tn7dFd1765+aq27fuDu2vvbzy7W+3fFz4qNAAECBAgQ2HuBz9r7GZgAAQIECBAgEIHuICBAgAABAjMQEOgzWERTIECAAAECAt0xQIAAAQIEZiAg0GewiKZAgAABAgQEumOAAAECBAjMQECgz2ARTYEAAQIECAh0xwABAgQIEJiBgECfwSKaAgECBAgQEOiOAQIECBAgMAMBgT6DRTQFAgQIECAg0B0DBAgQIEBgBgICfQaLaAoECBAgQECgOwYIECBAgMAMBAT6DBbRFAgQIECAgEB3DBAgQIAAgRkICPQZLKIpECBAgAABge4YIECAAAECMxAQ6DNYR...gQIECgWUCgN1NpSIAAAQIE+hUQ6P2ujcoIECBAgECzgEBvptKQAAECBAj0KyDQ+10blREgQIAAgWYBgd5MpSEBAgQIEOhXQKD3uzYqI0CAAAECzQICvZlKQwIECBAg0K+AQO93bVRGgAABAgSaBQR6M5WGBAgQIECgXwGB3u/aqIwAAQIECDQLCPRmKg0JECBAgEC/AgK937VRGQECBAgQaBYQ6M1UGhIgQIAAgX4FBHq/a6MyAgQIECDQLCDQm6k0JECAAAEC/QoI9H7XRmUECBAgQKBZQKA3U2lIgAABAgT6FRDo/a6NyggQIECAQLOAQG+m0pAAAQIECPQrIND7XRuVESBAgACBZgGB3kylIQECBAgQ6FdAoPe7NiojQIAAAQLNAgK9mUpDAgQIECDQr4BA73dtVEaAAAECBJoFBHozlYYECBAgQKBfAYHe79qojAABAgQINAsI9GYqDQkQIECAQL8C/w/+excxfrrjmwAAAABJRU5ErkJggg==">
 				</div>
 			</div>
 
 			<!-- Colonne droite -->
-			<div class="col-md-6" style="height: 400px;" id="imageAfter"></div>
+			<div class="col-md-6" style="height: 400px;" >
+				<img id="imageAfter" src="#" alt="your image" width="500" height="500"/>
+			</div>
 		</div>
 	</div>
 

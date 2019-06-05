@@ -17,3 +17,4 @@ function readURL(input) {
 $("#imgInp").change(function() {
   readURL(this);
 });
+
