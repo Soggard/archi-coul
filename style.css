@@ -98,6 +98,7 @@ a:link, a:visited, a:hover, a:active {
 	color: white;
     background-color: #6d6d6d;
 	border-radius: 0 0 10px 10px;
+	z-index: 99;
 }
 
 .tool-toggler {
