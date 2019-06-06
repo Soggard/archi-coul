@@ -6,8 +6,29 @@ function readURL(input) {
     var reader = new FileReader();
 
     reader.onload = function(e) {
-      $('#baseImage').attr('src', e.target.result);
-      // $('#imageBefore').css('background-image', 'url('+e.target.result+')');
+      const src = e.target.result
+
+
+      let image = new Image();
+      image.src = src;
+
+      image.onload = function() {
+        const canvas = document.querySelector('#draw');
+
+        // access image size here
+        console.log('width : ', this.width);
+        console.log('height : ', this.height);
+
+        $('#baseImage').css({
+          'width': this.width,
+          'height': this.height,
+        });
+
+        canvas.width = this.width;
+        canvas.height = this.height;
+
+        $('#baseImage').attr('src', src);
+      };
     }
 
     reader.readAsDataURL(input.files[0]);

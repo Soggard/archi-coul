@@ -1,11 +1,11 @@
-const canvas = document.querySelector('#draw');
+  const canvas = document.querySelector('#draw');
   const stroke_width = document.querySelector('.stroke_width');
   const stroke_color = document.querySelector('.stroke_color');
   const restore_button = document.querySelector('.restore_button');
   const ctx = canvas.getContext('2d');
-  const button = document.getElementById('btn-download');
   const buttonSend = document.getElementById('btn-send');
   const imgInp = document.getElementById('baseImage');
+console.log(imgInp);
 
   // canvas.width = window.innerWidth;
   // canvas.height = window.innerHeight;
@@ -32,31 +32,12 @@ const canvas = document.querySelector('#draw');
     ctx.beginPath();
     //Start from
     ctx.moveTo(lastX, lastY);
-console.log(lastX, lastY);
-console.log(e.offsetX, e.offsetY);
     //Go to
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
     ctx.lineWidth = stroke;
 
     [lastX, lastY] = [e.offsetX, e.offsetY];
-
-    // Random color and width
-
-    /*hue++;
-    if (hue >= 360) {
-      hue = 0;
-    }
-
-    if (c >= 100 || ctx.lineWidth <= 2) {
-      direction = !direction;
-    }
-
-    if (direction) {
-      ctx.lineWidth++;
-    } else {
-      ctx.lineWidth--;
-    }*/
   }
 
   function removeLine(e) {
@@ -68,7 +49,6 @@ console.log(e.offsetX, e.offsetY);
 
     console.log('hello');
     ctx.clearRect(lastX - 50 - 1, lastY - 50 - 1, stroke * Math.PI, stroke * Math.PI);
-    //ctx.clearRect(x - radius - 1, y - radius - 1, radius * 2 + 2, radius * 2 + 2);
 
     [lastX, lastY] = [e.offsetX, e.offsetY];
   }
@@ -93,30 +73,20 @@ console.log(e.offsetX, e.offsetY);
   stroke_width.addEventListener('input', (e) => stroke = e.path[0].value);
   stroke_color.addEventListener('input', (e) => color = e.path[0].value);
 
-  button.addEventListener('click', (e) => {
-    const dataURL = canvas.toDataURL('image/png');
-    console.log(dataURL);
-    button.href = dataURL;
-  });
-
   buttonSend.addEventListener('click', (e) => {
-  // console.dir(imgInp.getAttribute('src'));
-
-    let data    = { 'sketch': imgInp.src, 'hint': canvas.toDataURL('image/png'), 'opacity': 1.0 };
-    data        = JSON.stringify(data);
+    let data = { 'sketch': imgInp.src, 'hint': canvas.toDataURL('image/png'), 'opacity': 1.0 };
+    data = JSON.stringify(data);
     $.ajax({
-      url         : 'https://dvic.devinci.fr/dgx/paints_torch/api/v1/colorizer',
-      type        : 'POST',
-      data        : data,
-      contentType : 'application/json; charset=utf-8',
-      dataType    :'json',
-      success     : function(response){
+      url: 'https://dvic.devinci.fr/dgx/paints_torch/api/v1/colorizer',
+      type: 'POST',
+      data: data,
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'json',
+      success: (response) => {
         if('colored' in response) {
           let colored = response.colored;
           console.log(colored)
           $('#imageAfter').attr('src', colored);
-
-          // Do wathever you want with it
         }
       }
     });
