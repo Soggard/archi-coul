@@ -1,7 +1,67 @@
+html, body {
+	margin: 0;
+	height: 100%;
+}
 
+body {
+	background: linear-gradient(-45deg, #1b1b1b, #5b5b5b);
+}
+
+.settings {
+	border: red solid 1px;
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+#imageBefore, #imageAfter {
+	margin-top: 120px;
+}
+
+.redbox {
+	width: auto;
+	height: auto;
+	background-color: transparent;
+	z-index: 0;
+	margin: auto;
+}
+
+#draw {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	margin: auto;
+}
+
+.controls-group {
+	position: absolute;
+	top: 0;
+	margin: auto;
+	left: 50%;
+}
+
+.controls {
+	position: relative;
+	left: -50%;
+	padding: 10px;
+	background-color: #e7efff;
+}
+
+.tool-toggler {
+	background-color: #e7efff;
+	width: 80px;
+	margin: auto;
+	text-align: center;
+	padding: 20px;
+	border-radius: 0 0 5px 5px;
+}
 
 #imageBefore, #imageAfter {
 	background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
