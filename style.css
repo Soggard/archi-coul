@@ -51,6 +51,7 @@ body {
 	padding: 10px;
 	color: white;
     background-color: #6d6d6d;
+	border-radius: 0 0 10px 10px;
 }
 
 .tool-toggler {
