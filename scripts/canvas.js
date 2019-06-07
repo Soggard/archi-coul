@@ -5,7 +5,7 @@
   const ctx = canvas.getContext('2d');
   const buttonSend = document.getElementById('btn-send');
   const imgInp = document.getElementById('baseImage');
-console.log(imgInp);
+//console.log(imgInp);
 
   // canvas.width = window.innerWidth;
   // canvas.height = window.innerHeight;
@@ -25,7 +25,7 @@ console.log(imgInp);
   function draw(e) {
     if (!isDrawing) return; //Stop the function
     if (isClearing) return;
-    console.log(e);
+    //console.log(e);
 
     ctx.strokeStyle = color;
     ctx.beginPath();
@@ -40,21 +40,25 @@ console.log(imgInp);
   }
 
   function removeLine(e) {
-    console.log(isClearing);
+    //console.log(isClearing);
 
     if (!isDrawing) return;
     if (!isClearing) return;
     console.log(lastX, lastY);
 
-    console.log('hello');
+    //console.log('hello');
     ctx.clearRect(lastX - 50 - 1, lastY - 50 - 1, stroke * Math.PI, stroke * Math.PI);
-
     [lastX, lastY] = [e.offsetX, e.offsetY];
   }
 
   //restore_button.onclick = !isClearing;
   restore_button.addEventListener('click', () => {
     isClearing = !isClearing;
+    if(isClearing) {
+      $('.restore_button').html('Gomme: On')
+    } else {
+      $('.restore_button').html('Gomme: Off')
+    }
   });
 
   canvas.addEventListener('mousedown', (e) => {
@@ -90,7 +94,7 @@ console.log(imgInp);
       success: (response) => {
         if('colored' in response) {
           let colored = response.colored;
-          console.log(colored)
+          //console.log(colored)
           $('#imageAfter').attr('src', colored);
           $('#downloadResult').css('display', 'block');
           $('#downloadResult').attr('href', colored);
