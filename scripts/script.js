@@ -13,6 +13,7 @@ function readURL(input) {
 
       image.onload = function() {
         const canvas = document.querySelector('#draw');
+        const ctx = canvas.getContext('2d');
 
         // access image size here
         console.log('width : ', this.width);
@@ -25,6 +26,8 @@ function readURL(input) {
 
         canvas.width = this.width;
         canvas.height = this.height;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
 
         $('#baseImage').attr('src', src);
       };

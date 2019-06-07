@@ -22,11 +22,10 @@ console.log(imgInp);
   let color = '#000000';
   let stroke = 5;
 
-  // let direction = true;
-
   function draw(e) {
     if (!isDrawing) return; //Stop the function
     if (isClearing) return;
+    console.log(e);
 
     ctx.strokeStyle = color;
     ctx.beginPath();
@@ -61,6 +60,12 @@ console.log(imgInp);
   canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
+
+    draw(e);
+  });
+
+  $("#downloadResult").click(function(){
+
   });
 
   // start drawing
@@ -87,6 +92,8 @@ console.log(imgInp);
           let colored = response.colored;
           console.log(colored)
           $('#imageAfter').attr('src', colored);
+          $('#downloadResult').css('display', 'block');
+          $('#downloadResult').attr('href', colored);
         }
       }
     });
