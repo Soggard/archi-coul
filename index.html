@@ -12,16 +12,16 @@
 			<a class="navbar-brand" href="#">
 				<img src="img/logo_transparent.png" height="150" alt="">
 			</a>
-		
+
 			<!-- Collapse button -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
 			 aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
-			</button>	
+			</button>
 		</div>
 	</nav>
 
-	
+
 	<div id="intro">
 		<div class="intro-content">
 			<h1 class="project-name">Archi - Coul</h1>
@@ -31,9 +31,24 @@
 	</div>
 
 	<div id="project" class="container-fluid">
-		
 		<div class="row">
-			<!-- Colonne gauche -->
+			<div class="controls-group">
+				<div class="controls">
+					<form id="fileform1">
+						<input type='file' id="imgInp" name="sketch" />
+					</form>
+					<br>
+
+					<button class="restore_button btn btn-danger">Gomme : Off</button>
+					<hr>
+					<input type="range" max="100" min="1" class="stroke_width">
+					<input type="color" class="stroke_color">
+					<button type="button" class="button btn bg-info text-light" id="btn-send">Colorize</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
 			<div class="col-md-6" id="imageBefore">
 				<div class="image-container" style="position: relative;">
 					<div class="redbox">
@@ -44,28 +59,12 @@
 				</div>
 			</div>
 
-			<!-- Colonne droite -->
 			<div class="col-md-6 text-center" >
 				<img id="imageAfter" src="img/emptyhint.png" alt="your image" class="img-fluid"/>
 				<a id="downloadResult" href="" download="result.png" class="btn btn-info btn-sm" style="display: none;margin-bottom: 40px">Download</a>
 			</div>
 
-			<div class="controls-group">
-					<div class="controls">
-						<form id="fileform1">
-							<input type='file' id="imgInp" name="sketch" />
-						</form><br>
-					    <button class="restore_button btn btn-danger">Gomme : Off</button>
-					    <hr>
-					    <input type="range" max="100" min="1" class="stroke_width">
-					    <input type="color" class="stroke_color">
-					    <button type="button" class="button btn btn-success" id="btn-send">Colorize</button>
-					</div>
-					<!-- div style="position:relative; left: -50%">
-						<div class="tool-toggler" onclick="$('.controls').toggle('fast')">Edit</div>
-					</div-->
 
-			</div>
 		</div>
 	</div>
 

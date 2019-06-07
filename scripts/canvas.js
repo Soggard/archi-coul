@@ -7,8 +7,8 @@
   const imgInp = document.getElementById('baseImage');
 //console.log(imgInp);
 
-  // canvas.width = window.innerWidth;
-  // canvas.height = window.innerHeight;
+  canvas.width = 0;
+  canvas.height = 0;
 
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';

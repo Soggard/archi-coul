@@ -4,11 +4,7 @@ html, body {
 }
 
 body {
-	background: linear-gradient(-45deg, #1b1b1b, #5b5b5b);
-}
-
-.container-fluid {
-	margin-top: 150px;
+	background: #f6f5f5;
 }
 
 .navbar-index {
@@ -19,7 +15,7 @@ body {
 #intro {
 	height: 100%;
 	width: 100%;
-	background: url(img/bg-prez.jpg) no-repeat center center fixed; 
+	background: url(img/bg-prez.jpg) no-repeat center center fixed;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
  	 -o-background-size: cover;
@@ -63,16 +59,38 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #imageBefore, #imageAfter {
-	margin-top: 120px;
+	margin-top: 50px;
 }
 
 .redbox {
 	width: auto;
-	height: auto;
+	height: 500px;
 	background-color: transparent;
 	z-index: 0;
 	margin: auto;
 	text-align: center;
+	position: relative;
+	display: flex;
+}
+
+#fileform1 {
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+}
+
+#imgInp {
+	width: 100%;
+	height: 100%;
+}
+
+#downloadImg{
+	z-index: 0;
+	background-image: url('img/downloadimg.png');
+	background-size: cover;
+	background-position: center;
+	height: 150px;
+	width: 150px;
 }
 
 #draw {
@@ -85,7 +103,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .controls-group {
-	position: absolute;
+	/* position: absolute; */
 	margin: auto;
 	left: 50%;
 	z-index: 9999;
@@ -96,7 +114,7 @@ a:link, a:visited, a:hover, a:active {
 	left: -50%;
 	padding: 10px;
 	color: white;
-    background-color: #6d6d6d;
+	background-color: #e9e4e6;
 	border-radius: 0 0 10px 10px;
 	z-index: 99;
 }
