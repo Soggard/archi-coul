@@ -96,7 +96,7 @@
           let colored = response.colored;
           //console.log(colored)
           $('#imageAfter').attr('src', colored);
-          $('#downloadResult').css('display', 'block');
+          $('#downloadResult').css('display', 'inline-block');
           $('#downloadResult').attr('href', colored);
         }
       }
