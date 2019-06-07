@@ -89,6 +89,7 @@ a:link, a:visited, a:hover, a:active {
 	position: absolute;
 	margin: auto;
 	left: 50%;
+	z-index: 9999;
 }
 
 .controls {

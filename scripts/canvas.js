@@ -64,6 +64,10 @@ console.log(imgInp);
     draw(e);
   });
 
+  $("#downloadResult").click(function(){
+
+  });
+
   // start drawing
   canvas.addEventListener('mousemove', draw);
   // start clearing
@@ -88,6 +92,8 @@ console.log(imgInp);
           let colored = response.colored;
           console.log(colored)
           $('#imageAfter').attr('src', colored);
+          $('#downloadResult').css('display', 'block');
+          $('#downloadResult').attr('href', colored);
         }
       }
     });
