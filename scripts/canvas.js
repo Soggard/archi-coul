@@ -48,13 +48,17 @@
 
     //console.log('hello');
     ctx.clearRect(lastX - 50 - 1, lastY - 50 - 1, stroke * Math.PI, stroke * Math.PI);
-      console.log('ok');
     [lastX, lastY] = [e.offsetX, e.offsetY];
   }
 
   //restore_button.onclick = !isClearing;
   restore_button.addEventListener('click', () => {
     isClearing = !isClearing;
+    if(isClearing) {
+      $('.restore_button').html('Gomme: On')
+    } else {
+      $('.restore_button').html('Gomme: Off')
+    }
   });
 
   canvas.addEventListener('mousedown', (e) => {
